@@ -3,8 +3,9 @@
     <bannerbar></bannerbar>
     <nav-bar  @emitopen="openAboutModal" @emitclose="closeAboutModal" ></nav-bar>
     <!-- <router-view/> -->
-    <collections ></collections>
+    <collections @emitopen="openYoutubeModal" @emitclose="closeYoutubeModal" ></collections>
     <about-modal ref="aboutModal"   tabindex="-1"></about-modal>
+    <youtube-modal ref="youtubeModal" tabindex="-2"></youtube-modal>
   </div>
 </template>
 
@@ -13,30 +14,32 @@ import NavBar from './components/NavBar.vue'
 import Bannerbar from './components/Banner.vue'
 import AboutModal from './components/AboutModal.vue'
 import Collections from './components/Collections.vue'
+import YoutubeModal from './components/YoutubeModal.vue'
 
 export default {
   name: 'App',
-  data () {
-    return {
-      isAboutModalVisible: true
-    }
-  },
   components: {
     NavBar,
     Bannerbar,
     AboutModal,
-    Collections
+    Collections,
+    YoutubeModal
   },
   methods: {
-    showAboutModal: function () {
-      this.isAboutModalVisible = true
-    },
     closeAboutModal: function () {
       this.$refs.aboutModal.closeThis()
     },
     openAboutModal: function () {
       this.$refs.aboutModal.openThis()
     },
+    closeYoutubeModal: function () {
+      this.$refs.youtubeModal.closeThis()
+    },
+    openYoutubeModal: function (youtubeid) {
+      this.$refs.youtubeModal.youtubeurl(youtubeid)
+      this.$refs.youtubeModal.openThis()
+    },
+
     init () {
       // 範例 set refs
       // this.$set(this.$refs.aboutModal.$data, 'rotate', 'fuck you')
