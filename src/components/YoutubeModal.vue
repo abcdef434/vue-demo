@@ -1,5 +1,5 @@
 <template>
-<el-dialog  :visible.sync="isShow" width="80%" :show-close="false" fullscreen="true">
+<el-dialog  :visible.sync="isShow" width="80%" :show-close="false" fullscreen>
     <youtube :video-id="youtubeid" @ready="ready"></youtube>
 </el-dialog>
 </template>

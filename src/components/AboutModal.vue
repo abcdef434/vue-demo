@@ -1,10 +1,10 @@
 <template>
-<el-dialog title="About Kylie Wang" :custom-class=customabout :visible.sync="isShow" width="70%">
+<el-dialog :title=title :custom-class=customabout :visible.sync="isShow" width="70%">
   <el-row :gutter="20">
-      <el-col :span="4">
+      <el-col :span="8">
           <img :src="Boss">
       </el-col>
-      <el-col :span="14" :offset="4">
+      <el-col :span="11" :offset="3">
           <ul>
               <li v-bind:key="About.index" v-for="About in abouts">
                 <p>
@@ -36,7 +36,8 @@ export default {
           text: '平常是一個英文家教，熱衷於各種社會議題、文化和喜歡分享生活大小事。'
         }
       ],
-      Boss: Bossimg
+      Boss: Bossimg,
+      title: 'About Kylie Wang'
     }
   },
   methods: {
@@ -50,8 +51,8 @@ export default {
 }
 </script>
 <style scoped>
-div.el-col img {
-    width: 250px;
+img {
+  width: 30vw
 }
 div.el-col p {
     font-size: 24px;
