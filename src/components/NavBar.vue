@@ -28,4 +28,8 @@ ul {
     left: 0px;
     top: 30px;
 }
+.dropdown-divider {
+  height: 0.2rem;
+  margin: 0rem;
+}
 </style>

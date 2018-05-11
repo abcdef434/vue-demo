@@ -12,19 +12,19 @@
         <v-layout row wrap>
             <v-flex v-for="(video, oo) of CurrentVideos" :key="oo" :flex='4' >
           <v-card flat width='30vw' hover>
-            <v-card-media :src=video.snippet.thumbnails.high.url height='200px'>
+            <v-card-media :src=video.snippet.thumbnails.high.url height='4rem'>
         </v-card-media>
         <v-card-title primary-title >
           <div style="width:100%; text-align:center">
-              <h3 class='headline mb-0' style="height:75px">{{video.snippet.title}}</h3>
+              <span class='headline mb-0'>{{video.snippet.title}}</span>
           </div>
         </v-card-title>
         <v-card-actions>
           <v-spacer></v-spacer>
-        <div class="text-xs-center">
+        <!-- <div class="text-xs-center"> -->
           <span>{{ video.snippet.publishedAt| moment('YYYY-MM-DD') }} by {{video.snippet.channelTitle}}</span>
-          <v-btn flat color="primary" large @click='ShowYoutube(video.snippet.resourceId.videoId)'>前往觀看</v-btn>
-        </div>
+          <v-btn flat color="primary" @click='ShowYoutube(video.snippet.resourceId.videoId)'>前往觀看</v-btn>
+        <!-- </div> -->
         </v-card-actions>
           </v-card>
           </v-flex>
@@ -34,25 +34,6 @@
     </v-tabs-items>
       </v-tabs>
   </v-app>
-
-  <!-- <div>
-    <md-card v-for='(video, o) of Videos' :key='o' md-with-hover style='width:30vw'>
-      <md-card-media md-ratio='16:9'>
-        <img :src='video.snippet.thumbnails.high.url' class='image'>
-      </md-card-media>
-
-      <md-card-header>
-        <div class='md-title md-title-height'>{{video.snippet.title}}</div>
-      </md-card-header>
-
- <md-card-actions md-alignment='right'>
-          <div class='md-subhead'>
-              <span style='display: inline-flex align-items: center vertical-align: bottom'>{{ video.snippet.publishedAt| moment('YYYY-MM-DD') }} by {{video.snippet.channelTitle}}</span>
-             <md-button class='md-raised md-primary' @click='ShowYoutube(video.snippet.resourceId.videoId)'>前往觀看</md-button>
-          </div>
-        </md-card-actions>
-    </md-card>
-    </div> -->
     </div>
 </template>
 
@@ -180,14 +161,6 @@ export default {
 </script>
 
 <style scoped>
-div {
-  /* height: 500px */
-  /* padding: 10px */
-}
-.time {
-  font-size: 13px;
-  color: #999
-}
 .titlespan {
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -195,28 +168,15 @@ div {
   overflow: hidden;
   align-items: left
 }
-.bottom {
-  margin-top: 13px;
-  line-height: 12px
+.headline {
+  height:1rem;
+  font-size: 0.5rem !important
 }
-
-.button {
-  padding: 0;
-  float: right
+button.btn {
+  font-size: 0.5rem;
 }
-
-.image {
-  width: 100%;
-  display: block
-}
-
-.clearfix:before,
-.clearfix:after {
-  display: table;
-  content: ''
-}
-
-.clearfix:after {
-  clear: both
+span {
+  font-size: 0.1rem;
+  width: 80vw;
 }
 </style>

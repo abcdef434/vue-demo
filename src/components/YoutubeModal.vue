@@ -1,6 +1,6 @@
 <template>
-<el-dialog  :visible.sync="isShow" width="80%" :show-close="false" fullscreen>
-    <youtube :video-id="youtubeid" @ready="ready"></youtube>
+<el-dialog  :visible.sync="isShow" width="80%" :show-close="false">
+    <youtube :video-id="youtubeid" @ready="ready" style='height:85vh;'></youtube>
 </el-dialog>
 </template>
 
@@ -25,9 +25,9 @@ export default {
   methods: {
     ready: function (player) {
       this.player = player
+      console.log('player:' + player)
       this.player.a.attributeStyleMap.set('width', '100vw')
       this.player.a.attributeStyleMap.set('height', '85vh')
-      console.log(player.a.attributeStyleMap)
       // console.log(document.getElementById('youtube-player-1'))
       // console.log($('#youtube-player-1')[0])
       // var yp = $('#youtube-player-1')[0]
@@ -45,3 +45,11 @@ export default {
   }
 }
 </script>
+
+<style>
+#youtube-player-1 {
+  width:100vw;
+  height:85vh;
+}
+
+</style>

@@ -58,7 +58,7 @@ div.el-col p {
     font-size: 24px;
     text-align: left;
 }
-.el-dialog {
+@b dialog {
     border-radius: 10px;
 }
 

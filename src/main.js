@@ -20,14 +20,14 @@ import Notifications from 'vue-notification'
 
 import VueYouTubeEmbed from 'vue-youtube-embed'
 
-// VueMaterial
-import VueMaterial from 'vue-material'
-import 'vue-material/dist/vue-material.css'
-// VueMaterial
-
 // Vuetify
 import Vuetify from 'vuetify'
 // Vuetify
+
+// flexible
+import 'lib-flexible/flexible.js'
+// flexible
+
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(Vuex)
@@ -35,7 +35,6 @@ Vue.use(BootstrapVue)
 Vue.use(Notifications)
 Vue.use(VueAxios, axios)
 Vue.use(VueMoment)
-Vue.use(VueMaterial)
 Vue.use(VueYouTubeEmbed)
 Vue.use(Vuetify)
 
